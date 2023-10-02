@@ -76,5 +76,14 @@ mongoose.connect("mongodb://127.0.0.1:27017/petstagram")
     * install cookie parser (npm i cookie-parser)
     * config cookie parser in index.js
     * set cookie with token
-18.
-
+18. Logout
+19. Authentication middleware
+    * create base middleware
+    * use middleware
+    * implelemt auth middleware
+    * attach decoded token to request
+    * handle invalid Token
+20. Authorization middleware
+21. Dynamic Navigation
+    * add conditional in main layout
+    * add to res locals

@@ -1,17 +1,23 @@
+const bcrypt = require("bcrypt");
+
 const User = require("../models/User");
 const jwt = require("../lib/jwt");
-const bcrypt = require("bcrypt");
-const SECRET = "ee9c95ba-0a4b-4adf-9695-22ddeb21b925";
+const { SECRET } = require("../config/config");
 
 
 exports.login = async (username, password) => {
     // find user by username
     const user = await User.findOne({ username });
-    if(!user) throw new Error("Invalid user or password");
+
+    if(!user) { 
+        throw new Error("Invalid user or password") 
+    };
 
     // check password / validate hash
     const isValid = await bcrypt.compare(password, user.password);
-    if(!isValid) throw new Error("Invalid user or password");
+    if(!isValid) { 
+        throw new Error("Invalid user or password") 
+    };
 
     const payload = {
         _id: user._id,

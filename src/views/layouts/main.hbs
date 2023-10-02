@@ -43,20 +43,7 @@
                             </a>
                         </li>
 
-                        <!--For Guest User-->
-                        <li class="nav-item">
-                            <!-- Link to Login Page -->
-                            <a href="/users/login">
-                                <i>Login</i>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <!-- Link to Register Page -->
-                            <a href="/users/register">
-                                <i>Register</i>
-                            </a>
-                        </li>
-
+                        {{#if isAuthenticated}}
                         <!--For login users-->
                         <li class="nav-item">
                             <!-- Link to Add Photo Page -->
@@ -78,6 +65,22 @@
                                 <i>Logout</i>
                             </a>
                         </li>
+                        {{else}}
+                        <!--For Guest User-->
+                        <li class="nav-item">
+                            <!-- Link to Login Page -->
+                            <a href="/users/login">
+                                <i>Login</i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <!-- Link to Register Page -->
+                            <a href="/users/register">
+                                <i>Register</i>
+                            </a>
+                        </li>
+                        {{/if}}
+                    
                     </ul>
                 </div>
             </div>
