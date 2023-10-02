@@ -19,3 +19,29 @@ app.listen(PORT, console.log("Server is listening on port 5000..."));
 * add static middleware / app.use(express.static("public"));
 * add body parser / app.use(express.urlencoded({extended: false}));
 * add routes
+
+4. Add static resources / added CSS and Images to Public folder 
+5. Add views folder with ready htmls
+6. Add view engine which is express handlebars
+    * install ('first stop the server then npm i express-handlebars)
+    * add to express
+    * config exstenion
+    * code below:
+    app.engine("hbs", handlebars.engine({
+    extname: "hbs",
+    }));
+    app.set("view engine", "hbs");	
+    * end
+    * config views folder (only for src)
+    * add main layout
+    * add partials folder 
+    * render home page / -> fix styles and images (remove static name)
+7. Add controllers folder with home controller
+8. Add DB
+* install mongoose ( stop the server and write - npm i mongoose)
+* connect db 
+* CODE BELOW
+mongoose.connect("mongodb://127.0.0.1:27017/petstagram")
+.then(() => console.log("DB Connected Succesfully"))
+.catch(error => console.log("DB Error: " + error));
+* END 
