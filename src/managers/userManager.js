@@ -19,13 +19,7 @@ exports.login = async (username, password) => {
         throw new Error("Invalid user or password") 
     };
 
-    const payload = {
-        _id: user._id,
-        username: user.username,
-        email: user.email,
-    }
-
-    const token = await jwt.sign(payload, SECRET);
+    const token = await generateToken(user);
 
     return token;
 };
@@ -36,6 +30,23 @@ exports.register = async (userData) =>{
         throw new Error("Username already in use");
     }
 
-    return User.create(userData);
+    const createdUser = await User.create(userData)
+    
+    const token = await generateToken(createdUser);
+
+    return token;
 
 } 
+
+async function generateToken(user){
+
+    const payload = {
+        _id: user._id,
+        username: user.username,
+        email: user.email,
+    }
+
+    const token = await jwt.sign(payload, SECRET);
+
+    return token;
+}

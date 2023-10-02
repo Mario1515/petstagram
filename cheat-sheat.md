@@ -97,3 +97,4 @@ mongoose.connect("mongodb://127.0.0.1:27017/petstagram")
     * show error container conditionally
     * pass error to render 
     * add local error handler
+24. Automatically login after registration 
