@@ -34,7 +34,8 @@ app.listen(PORT, console.log("Server is listening on port 5000..."));
     * end
     * config views folder (only for src)
     * add main layout
-    * add partials folder 
+    * add partials folder+ logo to lead to home 
+    * fix nav to home 
     * render home page / -> fix styles and images (remove static name)
 7. Add controllers folder with home controller
 8. Add DB
@@ -44,4 +45,21 @@ app.listen(PORT, console.log("Server is listening on port 5000..."));
 mongoose.connect("mongodb://127.0.0.1:27017/petstagram")
 .then(() => console.log("DB Connected Succesfully"))
 .catch(error => console.log("DB Error: " + error));
-* END 
+* END
+9. Authentication
+    * add user controller
+    * add controller to routes
+    * fix header navigation to login, register and logout
+    * render login page
+    * render register page
+10. Add user model in models/User.js 
+    * add unique index for username
+    * validate repeat password
+11. Modify login and register forms.
+12. Add login and register post actions
+13. Add user manager
+    * add login and register methods (empty) in userManager;
+    * add register methods.
+    * validate if user already exists 
+14. Hash passwrd 
+    * install bcrypt (npm i bcrypt)    \
