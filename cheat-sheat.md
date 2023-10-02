@@ -62,4 +62,19 @@ mongoose.connect("mongodb://127.0.0.1:27017/petstagram")
     * add register methods.
     * validate if user already exists 
 14. Hash passwrd 
-    * install bcrypt (npm i bcrypt)    \
+    * install bcrypt (npm i bcrypt) 
+    * hash password
+15. Login 
+    * find user by username
+    * validate password with hash
+16. Generate jwt token
+    * install jsonwebtoken ( npm i jsonwebtoken)
+    * promisify jsonwebtoken ( i have created jwt.js)
+    * create secret
+    * generate token in managers / userManagers / login
+17. Return token in cookie
+    * install cookie parser (npm i cookie-parser)
+    * config cookie parser in index.js
+    * set cookie with token
+18.
+
