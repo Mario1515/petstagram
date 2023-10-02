@@ -87,3 +87,13 @@ mongoose.connect("mongodb://127.0.0.1:27017/petstagram")
 21. Dynamic Navigation
     * add conditional in main layout
     * add to res locals
+22. Error handling
+    * 404 page
+    * add global error handling ( optional )
+    * user global error ahndling after routes
+    * add missing route to 404
+23. Show error notifications
+    * add error container to main layout
+    * show error container conditionally
+    * pass error to render 
+    * add local error handler

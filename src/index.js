@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 const cookieParser = require("cookie-parser");
 
 const { auth } = require("./middlewares/authMiddleware");
+const { errorHandler } = require("./middlewares/errorHandlerMiddleware");
 const routes = require("./routes");
 
 const app = express();
@@ -27,5 +28,6 @@ app.use(express.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(auth); // important to be after cookieParser
 app.use(routes);
+app.use(errorHandler);
 
 app.listen(PORT, console.log("Server is listening on port 5000..."));
