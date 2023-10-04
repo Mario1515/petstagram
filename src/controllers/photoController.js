@@ -48,6 +48,26 @@ const photoId = req.params.photoId;
 });
 
 router.get("/:photoId/edit", async (req, res) => {
-    res.render(`photos/edit`)
+    const photo = await photoManager.getOne(req.params.photoId).lean();
+
+    res.render(`photos/edit`, { photo });
 });
+
+router.post("/:photoId/edit", async (req, res) => {
+    const photoData = req.body;
+    const photoId = req.params.photoId;
+
+    try{
+
+    await photoManager.edit(photoId, photoData);
+    res.redirect(`/photos/${photoId}/details`);
+
+    } catch (err) {
+        res.render("photos/edit", {error: "Unable to edit photo", ...photoData});
+    
+    }
+
+});
+
+
 module.exports = router;
