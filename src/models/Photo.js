@@ -9,10 +9,7 @@ const photoSchema = new mongoose.Schema({
     image: {
         type: String,
         required: [true, "ImageUrl is required"],
-        match: {
-            regex: /^https?:\/\//,
-            messsage: "Invalid image URL"
-        }
+        match: [/^https?:\/\//, "Invalid image URL"]
     },
     age: {
         type: Number,
