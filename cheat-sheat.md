@@ -4,6 +4,8 @@
 1. Intializa project - npm init -y + index.js
 2. NodeMon instalation - npm i -D nodemon + go into package.json delete Test and add ("start": "nodemon src/index.js")
 3. Install and setup express.js / stop server with "Control + C" afterwards npm i express
+
+4. OPTIONAL: install everything npm i express-handlebars mongoose bcrypt jsonwebtoken cookieparser
 ## the code below
 // const express = require("express");
 
